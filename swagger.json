@@ -1,0 +1,868 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "0.0.1-SNAPSHOT",
+    "title" : "1st Atlas Cloud Services"
+  },
+  "host" : "api.1statlas.com",
+  "basePath" : "/lx-gsone/api",
+  "termsOfService" : "http://swagger.io/terms/",
+  "email" : "api.team@locatorx.com",
+  "tags" : [ {
+    "name" : "batch",
+    "description" : "Everything about your Batches",
+    "externalDocs" : {
+      "description" : "Find out more",
+      "url" : "http://swagger.io"
+    }
+  }, {
+    "name" : "asset",
+    "description" : "Operations about assets"
+  }, {
+    "name" : "user",
+    "description" : "Operations about user"
+  } ],
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/appUsers" : {
+      "post" : {
+        "tags" : [ "user" ],
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "type" : "object"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "headers" : { }
+          }
+        }
+      }
+    },
+    "/appUsers/{appUserId}" : {
+      "get" : {
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "type" : "string",
+          "name" : "appUserId",
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "headers" : { }
+          }
+        }
+      },
+      "put" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "type" : "string",
+          "name" : "appUserId",
+          "in" : "path",
+          "required" : true
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "type" : "object"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "headers" : { }
+          }
+        }
+      },
+      "delete" : {
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "type" : "string",
+          "name" : "appUserId",
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "headers" : { }
+          }
+        }
+      }
+    },
+    "/auth" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "type" : "object"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "/batchRequests" : {
+      "get" : {
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "type" : "object"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "/batchRequests/{batchRequestId}" : {
+      "get" : {
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "type" : "string",
+          "name" : "batchRequestId",
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "/batchRequests/{batchRequestId}/qrUrl" : {
+      "get" : {
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "type" : "string",
+          "name" : "batchRequestId",
+          "in" : "path",
+          "required" : true
+        }, {
+          "type" : "string",
+          "name" : "environment",
+          "in" : "query",
+          "required" : true
+        }, {
+          "type" : "boolean",
+          "name" : "full",
+          "in" : "query",
+          "required" : true
+        }, {
+          "type" : "string",
+          "name" : "target",
+          "in" : "query",
+          "required" : true
+        }, {
+          "type" : "string",
+          "name" : "urlBase",
+          "in" : "query",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "/batchRequests/{batchRequestId}/report" : {
+      "get" : {
+        "consumes" : [ ],
+        "produces" : [ "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" ],
+        "parameters" : [ {
+          "type" : "string",
+          "name" : "batchRequestId",
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "$ref" : "#/definitions/["
+            }
+          }
+        }
+      }
+    },
+    "/batchRequests/{batchRequestId}/text" : {
+      "get" : {
+        "consumes" : [ ],
+        "produces" : [ "text/plain" ],
+        "parameters" : [ {
+          "type" : "string",
+          "name" : "batchRequestId",
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "/batches" : {
+      "get" : {
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "headers" : { }
+          }
+        }
+      },
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "type" : "object"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "headers" : { }
+          }
+        }
+      }
+    },
+    "/batches/{batchRequestId}" : {
+      "get" : {
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "type" : "string",
+          "name" : "batchRequestId",
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "headers" : { }
+          }
+        }
+      }
+    },
+    "/batches/{batchRequestId}/report" : {
+      "get" : {
+        "consumes" : [ ],
+        "produces" : [ "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" ],
+        "parameters" : [ {
+          "type" : "string",
+          "name" : "batchRequestId",
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "$ref" : "#/definitions/["
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "headers" : { }
+          }
+        }
+      }
+    },
+    "/batches/{batchRequestId}/text" : {
+      "get" : {
+        "consumes" : [ ],
+        "produces" : [ "text/plain" ],
+        "parameters" : [ {
+          "type" : "string",
+          "name" : "batchRequestId",
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "headers" : { }
+          }
+        }
+      }
+    },
+    "/productItems" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "type" : "object"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "/productItems/batch" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "type" : "object"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "/productItems/{productItemId}" : {
+      "get" : {
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "type" : "string",
+          "name" : "productItemId",
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "put" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "type" : "string",
+          "name" : "productItemId",
+          "in" : "path",
+          "required" : true
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "type" : "object"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "/productItems/{productItemId}/dataMatrix" : {
+      "get" : {
+        "consumes" : [ ],
+        "produces" : [ "image/png" ],
+        "parameters" : [ {
+          "type" : "string",
+          "name" : "productItemId",
+          "in" : "path",
+          "required" : true
+        }, {
+          "type" : "integer",
+          "name" : "magnification",
+          "in" : "query",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "$ref" : "#/definitions/["
+            }
+          }
+        }
+      }
+    },
+    "/productItems/{productItemId}/qrCode" : {
+      "get" : {
+        "consumes" : [ ],
+        "produces" : [ "image/png" ],
+        "parameters" : [ {
+          "type" : "string",
+          "name" : "productItemId",
+          "in" : "path",
+          "required" : true
+        }, {
+          "type" : "string",
+          "name" : "environment",
+          "in" : "query",
+          "required" : true
+        }, {
+          "type" : "boolean",
+          "name" : "full",
+          "in" : "query",
+          "required" : true
+        }, {
+          "type" : "integer",
+          "name" : "magnification",
+          "in" : "query",
+          "required" : true
+        }, {
+          "type" : "string",
+          "name" : "target",
+          "in" : "query",
+          "required" : true
+        }, {
+          "type" : "string",
+          "name" : "urlBase",
+          "in" : "query",
+          "required" : true
+        }, {
+          "type" : "integer",
+          "name" : "version",
+          "in" : "query",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "$ref" : "#/definitions/["
+            }
+          }
+        }
+      }
+    },
+    "/productItems/{productItemId}/qrUrl" : {
+      "get" : {
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "type" : "string",
+          "name" : "productItemId",
+          "in" : "path",
+          "required" : true
+        }, {
+          "type" : "string",
+          "name" : "environment",
+          "in" : "query",
+          "required" : true
+        }, {
+          "type" : "boolean",
+          "name" : "full",
+          "in" : "query",
+          "required" : true
+        }, {
+          "type" : "string",
+          "name" : "target",
+          "in" : "query",
+          "required" : true
+        }, {
+          "type" : "string",
+          "name" : "urlBase",
+          "in" : "query",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "/productItems/{productItemId}/scan" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "type" : "string",
+          "name" : "productItemId",
+          "in" : "path",
+          "required" : true
+        }, {
+          "type" : "boolean",
+          "name" : "full",
+          "in" : "query",
+          "required" : true
+        }, {
+          "type" : "integer",
+          "name" : "limit",
+          "in" : "query",
+          "required" : true
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "type" : "object"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "/productItems/{productItemId}/scans" : {
+      "get" : {
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "type" : "string",
+          "name" : "productItemId",
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "/productItems/{productItemId}/upcCode" : {
+      "get" : {
+        "consumes" : [ ],
+        "produces" : [ "image/png" ],
+        "parameters" : [ {
+          "type" : "string",
+          "name" : "productItemId",
+          "in" : "path",
+          "required" : true
+        }, {
+          "type" : "integer",
+          "name" : "magnification",
+          "in" : "query",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "$ref" : "#/definitions/["
+            }
+          }
+        }
+      }
+    },
+    "/products" : {
+      "get" : {
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "type" : "object"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "/products/{productId}" : {
+      "get" : {
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "type" : "string",
+          "name" : "productId",
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "put" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "type" : "string",
+          "name" : "productId",
+          "in" : "path",
+          "required" : true
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "type" : "object"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "type" : "string",
+          "name" : "productId",
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "headers" : { }
+          }
+        }
+      }
+    },
+    "/qrCodes" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "image/png" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "type" : "object"
+          }
+        } ],
+        "responses" : {
+          "Ok" : {
+            "schema" : {
+              "$ref" : "https://api.swaggerhub.com/domains/LocatorX1/CloudSrv-Components-1stAtlas/1.0#/definitions/Status"
+            }
+          }
+        }
+      }
+    },
+    "/upcCodes/{data}" : {
+      "get" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "image/png" ],
+        "parameters" : [ {
+          "type" : "string",
+          "name" : "data",
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : { },
+            "schema" : {
+              "$ref" : "#/definitions/["
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "[" : {
+      "properties" : { }
+    }
+  }
+}
